@@ -43,15 +43,14 @@ def parse_single_element(element_soup: BeautifulSoup):
 
 
 def main():
-    i = 0
     NAMBER_OF_PAGES = 94
-
+    i = 0
     while i < NAMBER_OF_PAGES:
         i = i + 1
         page = requests.get(f"https://www.kijiji.ca/b-apartments-condos/city-of-toronto/page-{i}/c37l1700273").content
         soup = BeautifulSoup(page, "html.parser")
         elements = soup.select(".top-feature")
-        return [parse_single_element(element_soup) for element_soup in elements]
+        print([parse_single_element(element_soup) for element_soup in elements])
 
 
 if __name__ == "__main__":
