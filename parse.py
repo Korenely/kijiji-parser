@@ -18,7 +18,7 @@ kijiji_elements = Table(
     Column('price', String),
 )
 
-engine = create_engine("postgresql://kbnlfbzg:tuDebiXJdcPwyBGOXmPs04QqFaXrzFsH@abul.db.elephantsql.com/kbnlfbzg")
+engine = create_engine("postgresql://kbnlfbzg:tuDebiXJdcPwyBGOXmPs04QqFaXrzFsH@abul.db.elephantsql.com/kbnlfbzg") # HARDCODE IS NOT SECURE
 meta.create_all(engine)
 
 
