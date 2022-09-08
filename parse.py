@@ -27,6 +27,7 @@ meta.create_all(engine)
 
 def parse_single_element(element_soup: BeautifulSoup):
     conn = engine.connect()
+
     try:
         beds = int(re.findall("\d+", element_soup.select_one(".beds").text.strip())[0])
     except IndexError:
@@ -34,6 +35,7 @@ def parse_single_element(element_soup: BeautifulSoup):
 
     description = element_soup.select_one(".description").text.strip().replace("\n", "").replace("  ", "")
     date = dateparser.parse(element_soup.select_one(".date-posted").text.strip()).strftime("%d-%m-%Y")
+
     kijiji_elements_add = kijiji_elements.insert().values(
         title=element_soup.select_one(".title").text.strip(),
         description=description,

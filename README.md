@@ -1,4 +1,5 @@
 # Parser for kijiji.ca
+This program can parse all objects from kijiji.ca considering pagination
 
 For start:
 ```shell
